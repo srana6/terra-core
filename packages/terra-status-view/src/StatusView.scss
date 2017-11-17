@@ -1,0 +1,69 @@
+:local {
+  .status-view {
+    margin-top: 40%;
+    margin-bottom: 60%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .status-content-group {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .glyph {
+    flex: 0 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .glyph > svg {
+    color: var(--terra-status-view-glyph-color, #000000);
+  }
+
+  .message-content-group {
+    display: flex;
+    align-items: center;;
+    flex-direction: column;
+  }
+
+  .title {
+    color: var(--terra-status-view-title-color, #000000);
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    font-size: var(--terra-status-view-title-font-size, 24px);
+    text-align: center;
+    font-family: var(--terra-status-view-title-font-family, 'Roboto');
+  }
+
+  .message {
+    color: var(--terra-status-view-message-color, #000000);;
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+    font-size: var(--terra-status-view-message-font-size, 14px);
+    font-family: var(--terra-status-view-message-font-family, 'Roboto');
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .divider {
+    width: 100%;
+    margin-top: 20px;
+    display: var(--terra-status-view-divider-display, none);
+    border-color: var(--terra-status-view-divider-color, #ffffff);
+  }
+
+  .buttons {
+    flex: 0 0 auto;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .buttons > button {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
