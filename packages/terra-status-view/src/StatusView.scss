@@ -1,23 +1,18 @@
 :local {
   .status-view {
-    margin-top: 40%;
-    margin-bottom: 60%;
     width: 100%;
     height: 100%;
-  }
-
-  .status-content-group {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 100%;
     align-items: center;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .glyph {
     flex: 0 0 auto;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
   }
 
   .glyph > svg {
@@ -45,13 +40,13 @@
     flex-wrap: wrap;
     font-size: var(--terra-status-view-message-font-size, 14px);
     font-family: var(--terra-status-view-message-font-family, 'Roboto');
-    margin-top: 10px;
+    padding-top: 10px;
     text-align: center;
   }
 
   .divider {
     width: 100%;
-    margin-top: 20px;
+    padding-top: 20px;
     display: var(--terra-status-view-divider-display, none);
     border-color: var(--terra-status-view-divider-color, #ffffff);
   }
@@ -59,7 +54,7 @@
   .buttons {
     flex: 0 0 auto;
     justify-content: center;
-    margin-top: 20px;
+    padding-top: 20px;
   }
 
   .buttons > button {

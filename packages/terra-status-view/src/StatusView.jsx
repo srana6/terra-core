@@ -43,52 +43,74 @@ const defaultProps = {
   isGlyphHidden: false,
 };
 
-const StatusView = ({
+class StatusView extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.handleOnResize = this.handleOnResize.bind(this);
+  }
+
+  componentDidMount() {
+    this.resizeObserver = new ResizeObserver((entries) => {
+      this.handleOnResize(entries[0].contentRect.width);
+    });
+    this.resizeObserver.observe(this.containerTarget);
+  }
+
+  componentWillUnmount() {
+    this.resizeObserver.disconnect(this.containerTarget);
+  }
+
+  handleOnResize() {
+    console.log('handleOnResize');
+  }
+
+  render() {
+    const {
     type,
     title,
     message,
     buttons,
     isGlyphHidden,
-    ...customProps
-  }) => {
+    ...customProps }
+    = this.props;
 
-  let glyphSection;
-  if (!isGlyphHidden) {
-    let icon;
-    if (type === 'nodata') {
-      icon = <IconFolder height='100px' width='100px' />;
-    } else if (type === 'nomatchingresults') {
-      icon = <IconSearch height='100px' width='100px' />;
-    } else if (type === 'notauthorized') {
-      icon = <IconPadlock height='100px' width='100px' />;
-    } else if (type === 'error') {
-      icon = <IconError height='100px' width='100px' />;
-    } else if (type === 'noservice') {
-      icon = <IconError height='100px' width='100px' />;
-    } else {
-      icon = <IconError height='100px' width='100px' />;
+    let glyphSection;
+    if (!isGlyphHidden) {
+      let icon;
+      if (type === 'nodata') {
+        icon = <IconFolder height='100px' width='100px' />;
+      } else if (type === 'nomatchingresults') {
+        icon = <IconSearch height='100px' width='100px' />;
+      } else if (type === 'notauthorized') {
+        icon = <IconPadlock height='100px' width='100px' />;
+      } else if (type === 'error') {
+        icon = <IconError height='100px' width='100px' />;
+      } else if (type === 'noservice') {
+        icon = <IconError height='100px' width='100px' />;
+      } else {
+        icon = <IconError height='100px' width='100px' />;
+      }
+      glyphSection = <div className={cx('glyph')}>{icon}</div>;
     }
-    glyphSection = <div className={cx('glyph')}>{icon}</div>;
-  }
 
-  let titleSection;
-  if (title) {
-    titleSection = <div className={cx('title')}>{title}</div>;
-  }
+    let titleSection;
+    if (title) {
+      titleSection = <div className={cx('title')}>{title}</div>;
+    }
 
-  let messageSection;
-  if (message) {
-    messageSection = <div className={cx('message')}>{message}</div>;
-  }
+    let messageSection;
+    if (message) {
+      messageSection = <div className={cx('message')}>{message}</div>;
+    }
 
-  let buttonSection;
-  if (buttons.length) {
-    buttonSection = <div className={cx('buttons')}>{buttons}</div>;
-  }
+    let buttonSection;
+    if (buttons.length) {
+      buttonSection = <div className={cx('buttons')}>{buttons}</div>;
+    }
 
-  return (
-    <div {...customProps} className={cx('status-view', customProps.className)}>
-      <div className={cx('status-content-group')}>
+    return (
+      <div {...customProps} className={cx('status-view', customProps.className)}>
         {glyphSection}
         <div className={cx('message-content-group')}>
           {titleSection}
@@ -97,9 +119,9 @@ const StatusView = ({
         </div>
         {buttonSection}
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 StatusView.propTypes = propTypes;
 StatusView.defaultProps = defaultProps;
