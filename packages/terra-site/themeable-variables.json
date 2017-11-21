@@ -269,15 +269,17 @@
     "--terra-slide-panel-panel-width-large": "60%"
   },
   "StatusView": {
-    "--terra-status-view-glyph-color": "#000000",
-    "--terra-status-view-title-color": "#000000",
-    "--terra-status-view-title-font-size": "24px",
+    "--terra-status-view-icon-height": "100px",
+    "--terra-status-view-icon-width": "100px",
+    "--terra-status-view-glyph-color": "#000",
+    "--terra-status-view-title-color": "#000",
     "--terra-status-view-title-font-family": "\"Roboto\"",
-    "--terra-status-view-message-color": "#000000",
-    "--terra-status-view-message-font-size": "14px",
+    "--terra-status-view-title-font-size": "24px",
+    "--terra-status-view-message-color": "#000",
     "--terra-status-view-message-font-family": "\"Roboto\"",
-    "--terra-status-view-divider-display": "none",
-    "--terra-status-view-divider-color": "#ffffff"
+    "--terra-status-view-message-font-size": "14px",
+    "--terra-status-view-divider-color": "#fff",
+    "--terra-status-view-divider-display": "none"
   },
   "Table": {
     "--terra-table-background-color": "#fff",
