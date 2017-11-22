@@ -4,31 +4,31 @@ import StatusView from 'terra-status-view';
 
 const propTypes = {
   children: PropTypes.node,
-  forceAlignItemsTop: PropTypes.bool,
+  isAlignedTop: PropTypes.bool,
   isGlyphHidden: PropTypes.bool,
   message: PropTypes.string,
   title: PropTypes.string,
-  type: PropTypes.string,
+  variant: PropTypes.string,
 };
 
 class StatusViewExample extends React.Component {
   render() {
     const {
     children,
-    forceAlignItemsTop,
+    isAlignedTop,
     isGlyphHidden,
     message,
     title,
-    type,
+    variant,
     ...customProps }
     = this.props;
 
     return (
       <div style={{ border: '1px solid black' }}>
         <StatusView
-          forceAlignItemsTop={forceAlignItemsTop}
+          isAlignedTop={isAlignedTop}
           isGlyphHidden={isGlyphHidden}
-          type={type}
+          variant={variant}
           title={title}
           message={message}
         >
