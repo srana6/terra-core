@@ -40,7 +40,7 @@ const StatusExamples = () => (
     </div>
     <br />
     <h2 id="blank">Status View:  Glyph Hidden</h2>
-    <StatusViewExample variant={StatusView.variants.ERROR} title="500" message="An exception was thrown" isGlyphHidden={true}>
+    <StatusViewExample variant={StatusView.variants.ERROR} title="500" message="An exception was thrown" isGlyphHidden>
       <Button text="OK" key="1" />
       <Button text="Cancel" key="2" />
     </StatusViewExample>
@@ -50,7 +50,7 @@ const StatusExamples = () => (
       <Button text="Cancel" key="2" />
     </StatusViewExample>
     <h2 id="blank">Status View:  Align Top</h2>
-    <StatusViewExample style={{ height: '500px' }} isAlignedTop={true} variant={StatusView.variants.ERROR} title="500" message="An exception was thrown">
+    <StatusViewExample style={{ height: '500px' }} isAlignedTop variant={StatusView.variants.ERROR} title="500" message="An exception was thrown">
       <Button text="OK" key="1" />
       <Button text="Cancel" key="2" />
     </StatusViewExample>

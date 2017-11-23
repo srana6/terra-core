@@ -105,28 +105,42 @@ class StatusView extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { showContainers: [true, true, true, true] };
+    this.state = {
+      showTitle: true,
+      showButtons: true,
+      showMessage: true,
+      showGlyph: true,
+    };
+    this.determineContainersToShowForHeight = this.determineContainersToShowForHeight.bind(this);
+    this.canDisplayComponentInHeight = this.canDisplayComponentInHeight.bind(this);
   }
 
   componentDidMount() {
-    let viewHeight = this.contentNode.offsetHeight - 40;
-    const newState = { showContainers: [true, true, true, true] };
+    const viewHeight = this.contentNode.offsetHeight - 40;
+    this.determineContainersToShowForHeight(viewHeight);
+  }
 
+  determineContainersToShowForHeight(height) {
+    let viewHeight = height;
     const components = [this.titleNode, this.buttonsNode, this.messageNode, this.glyphNode];
+    const showComponents = [false, false, false, false];
+
     for (let i = 0; i < components.length; i += 1) {
       const component = components[i];
-      let canDisplayComponent = false;
-      if (component) {
+      if (component && viewHeight > 0) {
         viewHeight -= component.offsetHeight;
         if (viewHeight >= 0) {
-          canDisplayComponent = true;
+          showComponents[i] = true;
         }
       }
-
-      newState.showContainers[i] = canDisplayComponent;
     }
 
-    this.setState(newState);
+    this.setState({
+      showTitle: showComponents[0],
+      showButtons: showComponents[1],
+      showMessage: showComponents[2],
+      showGlyph: showComponents[3],
+    });
   }
 
   render() {
@@ -141,25 +155,25 @@ class StatusView extends React.Component {
     = this.props;
 
     let glyphSection;
-    if (!isGlyphHidden && this.state.showContainers[3]) {
+    if (!isGlyphHidden && this.state.showGlyph) {
       const defaultIcon = StatusView.defaultIcon(variant);
       glyphSection = <div className={cx('glyph')} ref={(element) => { this.glyphNode = element; }}>{defaultIcon}</div>;
     }
 
     let messageSection;
-    if (message && this.state.showContainers[2]) {
+    if (message && this.state.showMessage) {
       messageSection = <div className={cx('message')} ref={(element) => { this.messageNode = element; }}>{message}</div>;
     }
 
     let buttonSection;
-    if (children.length && this.state.showContainers[1]) {
+    if (children.length && this.state.showButtons) {
       buttonSection = <div className={cx('buttons')} ref={(element) => { this.buttonsNode = element; }}>{children}</div>;
     }
 
     let titleSection;
-    if (this.state.showContainers[0]) {
+    if (this.state.showTitle) {
       let defaultTitle = title;
-      if (!defaultTitle || !defaultTitle.length) {
+      if (!defaultTitle) {
         defaultTitle = StatusView.defaultTitle(variant);
       }
       titleSection = <div className={cx('title')} ref={(element) => { this.titleNode = element; }}>{defaultTitle}</div>;
