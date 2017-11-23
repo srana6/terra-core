@@ -19,14 +19,14 @@ const StatusExamples = () => (
     <Markdown id="readme" src={ReadMe} />
     <PropsTable id="props" src={StatusViewSrc} />
     <h2 id="default">Status View:  No props given</h2>
-    <StatusViewExample/>
-    <br/>
+    <StatusViewExample />
+    <br />
     <h2 id="default">Status View:  All props given</h2>
     <StatusViewExample variant={StatusView.variants.NODATA} title="404" message="No data was returned">
       <Button text="OK" key="1" />
       <Button text="Cancel" key="2" />
     </StatusViewExample>
-    <br/>
+    <br />
     <h2 id="blank">Status View:  Text Wrapping</h2>
     <div width="400px">
       <StatusViewExample
@@ -38,9 +38,19 @@ const StatusExamples = () => (
         <Button text="Cancel, here is some really really long text to make the button take up a bunch of space." key="2" />
       </StatusViewExample>
     </div>
-    <br/>
+    <br />
     <h2 id="blank">Status View:  Glyph Hidden</h2>
     <StatusViewExample variant={StatusView.variants.ERROR} title="500" message="An exception was thrown" isGlyphHidden={true}>
+      <Button text="OK" key="1" />
+      <Button text="Cancel" key="2" />
+    </StatusViewExample>
+    <h2 id="blank">Status View:  Large Container</h2>
+    <StatusViewExample style={{ height: '500px' }} variant={StatusView.variants.ERROR} title="500" message="An exception was thrown">
+      <Button text="OK" key="1" />
+      <Button text="Cancel" key="2" />
+    </StatusViewExample>
+    <h2 id="blank">Status View:  Align Top</h2>
+    <StatusViewExample style={{ height: '500px' }} isAlignedTop={true} variant={StatusView.variants.ERROR} title="500" message="An exception was thrown">
       <Button text="OK" key="1" />
       <Button text="Cancel" key="2" />
     </StatusViewExample>

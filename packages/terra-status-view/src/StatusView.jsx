@@ -56,7 +56,7 @@ const propTypes = {
     variants.NOTAUTHORIZED,
     variants.ERROR,
     variants.NOSERVICE,
-    variants.UNKNOWN
+    variants.UNKNOWN,
   ]),
 };
 
@@ -71,17 +71,46 @@ const defaultProps = {
 
 class StatusView extends React.Component {
 
+  static defaultTitle(variant) {
+    let title = '';
+    if (variant === variants.NODATA) {
+      title = 'No Results';
+    } else if (variant === variants.NOMATCHINGRESULTS) {
+      title = 'No Matching Results';
+    } else if (variant === variants.NOTAUTHORIZED) {
+      title = 'Not Authorized';
+    } else if (variant === variants.ERROR) {
+      title = 'Error';
+    }
+    return title;
+  }
+
+  static defaultIcon(variant) {
+    let icon;
+    if (variant === variants.NODATA) {
+      icon = <IconFolder className={cx('icon')} />;
+    } else if (variant === variants.NOMATCHINGRESULTS) {
+      icon = <IconSearch className={cx('icon')} />;
+    } else if (variant === variants.NOTAUTHORIZED) {
+      icon = <IconPadlock className={cx('icon')} />;
+    } else if (variant === variants.ERROR) {
+      icon = <IconError className={cx('icon')} />;
+    } else if (variant === variants.NOSERVICE) {
+      icon = <IconError className={cx('icon')} />;
+    } else {  // variant == variants.UNKNOWN
+      icon = <IconError className={cx('icon')} />;
+    }
+    return icon;
+  }
+
   constructor(props) {
     super(props);
     this.state = { showContainers: [true, true, true, true] };
-    this.defaultTitle = this.defaultTitle.bind(this);
-    this.defaultIcon = this.defaultIcon.bind(this);
   }
 
   componentDidMount() {
     let viewHeight = this.contentNode.offsetHeight - 40;
-    let componentsHeight = 0;
-    let newState = { showContainers: [true, true, true, true] };
+    const newState = { showContainers: [true, true, true, true] };
 
     const components = [this.titleNode, this.buttonsNode, this.messageNode, this.glyphNode];
     for (let i = 0; i < components.length; i += 1) {
@@ -100,38 +129,6 @@ class StatusView extends React.Component {
     this.setState(newState);
   }
 
-  defaultTitle(variant) {
-    let title = '';
-    if (variant === variants.NODATA) {
-      title = 'No Results';
-    } else if (variant === variants.NOMATCHINGRESULTS) {
-      title = 'No Matching Results';
-    } else if (variant === variants.NOTAUTHORIZED) {
-      title = 'Not Authorized';
-    } else if (variant === variants.ERROR) {
-      title = 'Error';
-    }
-    return title;
-  }
-
-  defaultIcon(variant) {
-    let icon;
-    if (variant === variants.NODATA) {
-      icon = <IconFolder className={cx('icon')} />;
-    } else if (variant === variants.NOMATCHINGRESULTS) {
-      icon = <IconSearch className={cx('icon')} />;
-    } else if (variant === variants.NOTAUTHORIZED) {
-      icon = <IconPadlock className={cx('icon')} />;
-    } else if (variant === variants.ERROR) {
-      icon = <IconError className={cx('icon')} />;
-    } else if (variant === variants.NOSERVICE) {
-      icon = <IconError className={cx('icon')} />;
-    } else {  // variant == variants.UNKNOWN
-      icon = <IconError className={cx('icon')} />;
-    }
-    return icon;
-  }
-
   render() {
     const {
     children,
@@ -145,7 +142,7 @@ class StatusView extends React.Component {
 
     let glyphSection;
     if (!isGlyphHidden && this.state.showContainers[3]) {
-      const defaultIcon = this.defaultIcon(variant);
+      const defaultIcon = StatusView.defaultIcon(variant);
       glyphSection = <div className={cx('glyph')} ref={(element) => { this.glyphNode = element; }}>{defaultIcon}</div>;
     }
 
@@ -163,13 +160,20 @@ class StatusView extends React.Component {
     if (this.state.showContainers[0]) {
       let defaultTitle = title;
       if (!defaultTitle || !defaultTitle.length) {
-        defaultTitle = this.defaultTitle(variant);
+        defaultTitle = StatusView.defaultTitle(variant);
       }
       titleSection = <div className={cx('title')} ref={(element) => { this.titleNode = element; }}>{defaultTitle}</div>;
     }
 
+    const alignClass = (isAlignedTop) ? 'align-top' : 'align-center';
+    const statusViewClassNames = cx([
+      'status-view',
+      alignClass,
+      customProps.className,
+    ]);
+
     return (
-      <div {...customProps} className={cx('status-view', customProps.className)} ref={(element) => { this.contentNode = element; }}>
+      <div {...customProps} className={statusViewClassNames} ref={(element) => { this.contentNode = element; }}>
         {glyphSection}
         <div className={cx('message-content-group')}>
           {titleSection}
