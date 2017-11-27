@@ -110,9 +110,10 @@ class StatusView extends React.Component {
       showButtons: true,
       showMessage: true,
       showGlyph: true,
+      paddingTop: 20,
+      paddingBottom: 20,
     };
     this.determineContainersToShowForHeight = this.determineContainersToShowForHeight.bind(this);
-    this.canDisplayComponentInHeight = this.canDisplayComponentInHeight.bind(this);
   }
 
   componentDidMount() {
@@ -124,13 +125,18 @@ class StatusView extends React.Component {
     let viewHeight = height;
     const components = [this.titleNode, this.buttonsNode, this.messageNode, this.glyphNode];
     const showComponents = [false, false, false, false];
-
+    let additionalTopPadding = 0;
+    let additionBottomPadding = 0;
     for (let i = 0; i < components.length; i += 1) {
       const component = components[i];
       if (component && viewHeight > 0) {
         viewHeight -= component.offsetHeight;
         if (viewHeight >= 0) {
           showComponents[i] = true;
+          if (!this.props.isAlignedTop) {
+            additionalTopPadding = viewHeight * 0.4;
+            additionBottomPadding = viewHeight * 0.6;
+          }
         }
       }
     }
@@ -140,6 +146,8 @@ class StatusView extends React.Component {
       showButtons: showComponents[1],
       showMessage: showComponents[2],
       showGlyph: showComponents[3],
+      paddingTop: 20 + additionalTopPadding,
+      paddingBottom: 20 + additionBottomPadding,
     });
   }
 
@@ -179,15 +187,23 @@ class StatusView extends React.Component {
       titleSection = <div className={cx('title')} ref={(element) => { this.titleNode = element; }}>{defaultTitle}</div>;
     }
 
-    const alignClass = (isAlignedTop) ? 'align-top' : 'align-center';
     const statusViewClassNames = cx([
       'status-view',
-      alignClass,
       customProps.className,
     ]);
 
+    const outerDivStyles = {
+      paddingTop: `${this.state.paddingTop}px`,
+      paddingBottom: `${this.state.paddingBottom}px`,
+    };
+
     return (
-      <div {...customProps} className={statusViewClassNames} ref={(element) => { this.contentNode = element; }}>
+      <div
+        {...customProps}
+        className={statusViewClassNames}
+        style={{ ...outerDivStyles, ...customProps.style }}
+        ref={(element) => { this.contentNode = element; }}
+      >
         {glyphSection}
         <div className={cx('message-content-group')}>
           {titleSection}

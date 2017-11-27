@@ -3,18 +3,8 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    width: 100%;
-  }
-
-  .align-center {
     height: 100%;
-  }
-
-  .align-top {
-    height: auto;
+    width: 100%;
   }
 
   .icon {
@@ -66,7 +56,6 @@
   .buttons {
     display: flex;
     flex: 0 0 auto;
-    justify-content: center;
     padding-top: 20px;
   }
 
