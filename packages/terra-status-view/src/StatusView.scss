@@ -39,10 +39,6 @@
     background-image: var(--terra-status-view-glyph-no-service, url('../node_modules/terra-icon/src/svg/noSignal.svg'));
   }
 
-  .glyph > .unknown {
-    background-image: var(--terra-status-view-glyph-unknown, url('../node_modules/terra-icon/src/svg/cancel.svg'));
-  }
-
   .message-content-group {
     align-items: center;
     display: flex;

@@ -13,7 +13,7 @@ const variants = {
   NOTAUTHORIZED: 'not-authorized',
   ERROR: 'error',
   NOSERVICE: 'no-service',
-  UNKNOWN: 'unknown',
+  CUSTOM: 'custom',
 };
 
 const propTypes = {
@@ -52,7 +52,7 @@ const propTypes = {
     variants.NOTAUTHORIZED,
     variants.ERROR,
     variants.NOSERVICE,
-    variants.UNKNOWN,
+    variants.CUSTOM,
   ]),
 };
 
@@ -79,8 +79,6 @@ class StatusView extends React.Component {
       title = 'Error';
     } else if (variant === variants.NOSERVICE) {
       title = 'Not Connected';
-    } else { // (variant === variants.UNKNOWN)
-      title = 'Error';
     }
     return title;
   }

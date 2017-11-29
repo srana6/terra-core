@@ -276,7 +276,6 @@
     "--terra-status-view-glyph-not-authorized": "url(\"../node_modules/terra-icon/src/svg/padlock.svg\")",
     "--terra-status-view-glyph-error": "url(\"../node_modules/terra-icon/src/svg/error.svg\")",
     "--terra-status-view-glyph-no-service": "url(\"../node_modules/terra-icon/src/svg/noSignal.svg\")",
-    "--terra-status-view-glyph-unknown": "url(\"../node_modules/terra-icon/src/svg/cancel.svg\")",
     "--terra-status-view-title-color": "#000",
     "--terra-status-view-title-font-family": "\"Roboto\"",
     "--terra-status-view-title-font-size": "24px",
