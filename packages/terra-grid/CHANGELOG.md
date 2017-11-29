@@ -4,11 +4,6 @@ Changelog
 Unreleased
 ----------
 
-3.17.0 - (November 28, 2017)
-------------------
-### Changed
-* Minor version bump
-
 3.16.0 - (November 16, 2017)
 ------------------
 ### Changed

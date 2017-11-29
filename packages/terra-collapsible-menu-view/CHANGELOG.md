@@ -4,11 +4,6 @@ ChangeLog
 Unreleased
 -----------------
 
-1.6.0 - (November 28, 2017)
-------------------
-### Changed
-* Update menu to keep the last child face up if it fits within the available menu space
-
 1.5.0 - (November 16, 2017)
 ------------------
 ### Changed

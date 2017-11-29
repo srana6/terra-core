@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchField from '../../lib/SearchField';
+import SearchField from '../../src/SearchField';
 
 class DelayedSearchField extends React.Component {
 

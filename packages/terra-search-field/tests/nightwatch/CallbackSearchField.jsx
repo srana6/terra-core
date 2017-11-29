@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchField from '../../lib/SearchField';
+import SearchField from '../../src/SearchField';
 
 class CallbackSearchField extends React.Component {
 

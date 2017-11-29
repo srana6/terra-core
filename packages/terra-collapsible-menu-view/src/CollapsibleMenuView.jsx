@@ -77,15 +77,8 @@ class CollapsibleMenuView extends React.Component {
 
     for (let i = 0; i < this.props.children.length; i += 1) {
       const child = this.container.children[i];
-      const childWidth = child.getBoundingClientRect().width;
-      calcWidth += childWidth;
-
+      calcWidth += child.getBoundingClientRect().width;
       if (calcWidth > availableWidth) {
-        // If last child fits in the available space, leave it face up
-        if (i === this.props.children.length - 1 && calcWidth <= width) {
-          break;
-        }
-
         hiddenStartIndex = i;
         menuHidden = false;
         break;
@@ -98,7 +91,6 @@ class CollapsibleMenuView extends React.Component {
   render() {
     const { children, boundingRef, menuWidth, ...customProps } = this.props;
     const visibleChildren = React.Children.toArray(children);
-
     let hiddenChildren = null;
     if (this.state.hiddenStartIndex >= 0) {
       hiddenChildren = visibleChildren.splice(this.state.hiddenStartIndex);

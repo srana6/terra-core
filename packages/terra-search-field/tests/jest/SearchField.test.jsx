@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchField from '../../src/SearchField';
 
+
 describe('Snapshots', () => {
   it('renders a basic search field', () => {
     const searchField = shallow(<SearchField />);
@@ -13,24 +14,7 @@ describe('Snapshots', () => {
   });
 
   it('renders a search field with a value', () => {
-    const searchField = shallow(<SearchField value={'Test'} />);
-    expect(searchField).toMatchSnapshot();
-  });
-
-  it('renders a search field with a defaulted value', () => {
-    const searchField = shallow(<SearchField defaultValue={'Default'} />);
-    expect(searchField).toMatchSnapshot();
-  });
-
-  it('renders a disabled search field with a value', () => {
-    const searchField = shallow(<SearchField isDisabled />);
-    searchField.setState({ searchText: 'Test' });
-
-    expect(searchField).toMatchSnapshot();
-  });
-
-  it('renders a search field that displays as a block to fill its container', () => {
-    const searchField = shallow(<SearchField isBlock />);
+    const searchField = shallow(<SearchField />);
     searchField.setState({ searchText: 'Test' });
 
     expect(searchField).toMatchSnapshot();
@@ -148,16 +132,5 @@ describe('Auto Search', () => {
 
     searchField.childAt(0).simulate('change', { target: {} });
     expect(setTimeout).toBeCalledWith(expect.anything(), 1000);
-  });
-
-  it('should call onChange when button is selected', () => {
-    const onChange = jest.fn();
-    const searchField = shallow(<SearchField onChange={onChange} />);
-
-    searchField.childAt(0).simulate('change', { target: {} });
-    expect(onChange).toBeCalled();
-
-    searchField.childAt(0).simulate('change', { target: {} });
-    expect(onChange).toBeCalled();
   });
 });

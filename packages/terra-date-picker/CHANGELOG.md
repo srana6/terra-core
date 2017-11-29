@@ -3,9 +3,6 @@ Changelog
 
 Unreleased
 ----------
-
-1.17.0 - (November 28, 2017)
-------------------
 ### Changed
 * Removed onInputFocus, onCalendarButtonClick and shouldShowPicker props and pass them down as custom props.
 
