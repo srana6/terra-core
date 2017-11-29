@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import 'terra-base/lib/baseStyles';
 import Divider from 'terra-divider';
-import IconFolder from 'terra-icon/lib/icon/IconFolder';
-import IconSearch from 'terra-icon/lib/icon/IconSearch';
-import IconPadlock from 'terra-icon/lib/icon/IconPadlock';
-import IconError from 'terra-icon/lib/icon/IconError';
 import styles from './StatusView.scss';
 
 const cx = classNames.bind(styles);
@@ -81,26 +77,12 @@ class StatusView extends React.Component {
       title = 'Not Authorized';
     } else if (variant === variants.ERROR) {
       title = 'Error';
+    } else if (variant === variants.NOSERVICE) {
+      title = 'Not Connected';
+    } else { // (variant === variants.UNKNOWN)
+      title = 'Error';
     }
     return title;
-  }
-
-  static defaultIcon(variant) {
-    let icon;
-    if (variant === variants.NODATA) {
-      icon = <IconFolder className={cx('icon')} />;
-    } else if (variant === variants.NOMATCHINGRESULTS) {
-      icon = <IconSearch className={cx('icon')} />;
-    } else if (variant === variants.NOTAUTHORIZED) {
-      icon = <IconPadlock className={cx('icon')} />;
-    } else if (variant === variants.ERROR) {
-      icon = <IconError className={cx('icon')} />;
-    } else if (variant === variants.NOSERVICE) {
-      icon = <IconError className={cx('icon')} />;
-    } else {  // variant == variants.UNKNOWN
-      icon = <IconError className={cx('icon')} />;
-    }
-    return icon;
   }
 
   constructor(props) {
@@ -117,16 +99,18 @@ class StatusView extends React.Component {
   }
 
   componentDidMount() {
-    const viewHeight = this.contentNode.offsetHeight - 40;
-    this.determineContainersToShowForHeight(viewHeight);
+    this.determineContainersToShowForHeight(this.contentNode.offsetHeight);
   }
 
   determineContainersToShowForHeight(height) {
-    let viewHeight = height;
-    const components = [this.titleNode, this.buttonsNode, this.messageNode, this.glyphNode];
-    const showComponents = [false, false, false, false];
+    // the status view has a minimum 20px top and bottom padding,
+    // need to subtract to determine if will components will fit in remaining space
+    let viewHeight = height - 40;
     let additionalTopPadding = 0;
     let additionBottomPadding = 0;
+    const components = [this.titleNode, this.buttonsNode, this.messageNode, this.glyphNode];
+    const showComponents = [false, false, false, false];
+
     for (let i = 0; i < components.length; i += 1) {
       const component = components[i];
       if (component && viewHeight > 0) {
@@ -134,6 +118,8 @@ class StatusView extends React.Component {
         if (viewHeight >= 0) {
           showComponents[i] = true;
           if (!this.props.isAlignedTop) {
+            // calculate the remaining padding to be added for when the most amount
+            // of the components can fit into the view
             additionalTopPadding = viewHeight * 0.4;
             additionBottomPadding = viewHeight * 0.6;
           }
@@ -141,6 +127,8 @@ class StatusView extends React.Component {
       }
     }
 
+    // set which components can fit into the view and add the additional 20px
+    // top and bottom padding to the remaining additional padding leftover
     this.setState({
       showTitle: showComponents[0],
       showButtons: showComponents[1],
@@ -164,8 +152,7 @@ class StatusView extends React.Component {
 
     let glyphSection;
     if (!isGlyphHidden && this.state.showGlyph) {
-      const defaultIcon = StatusView.defaultIcon(variant);
-      glyphSection = <div className={cx('glyph')} ref={(element) => { this.glyphNode = element; }}>{defaultIcon}</div>;
+      glyphSection = <div className={cx('glyph')} ref={(element) => { this.glyphNode = element; }}><svg className={cx(variant)} /></div>;
     }
 
     let messageSection;
@@ -192,7 +179,7 @@ class StatusView extends React.Component {
       customProps.className,
     ]);
 
-    const outerDivStyles = {
+    const statusViewStyles = {
       paddingTop: `${this.state.paddingTop}px`,
       paddingBottom: `${this.state.paddingBottom}px`,
     };
@@ -201,7 +188,7 @@ class StatusView extends React.Component {
       <div
         {...customProps}
         className={statusViewClassNames}
-        style={{ ...outerDivStyles, ...customProps.style }}
+        style={{ ...statusViewStyles, ...customProps.style }}
         ref={(element) => { this.contentNode = element; }}
       >
         {glyphSection}
