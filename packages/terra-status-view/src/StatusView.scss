@@ -77,13 +77,7 @@
     display: flex;
     flex: 0 0 auto;
     padding-top: 20px;
-  }
-
-  .buttons > button {
-    background-color: var(--terra-status-view-button-background-color, rgba(255, 255, 255, 0.8));
-    border: var(--terra-status-view-button-border, solid 1px #1c1f21);
-    border-radius: var(--terra-status-view-button-border-radius, 3px);
-    margin-left: 5px;
-    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
