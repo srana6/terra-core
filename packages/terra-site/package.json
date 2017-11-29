@@ -71,6 +71,7 @@
     "terra-profile-image": "^1.12.0",
     "terra-progress-bar": "^1.13.0",
     "terra-props-table": "^1.10.1",
+<<<<<<< HEAD
     "terra-responsive-element": "^1.12.0",
     "terra-search-field": "^1.16.0",
     "terra-signature": "^0.6.0",
@@ -84,6 +85,20 @@
     "terra-time-input": "^1.14.0",
     "terra-toggle": "^1.12.0",
     "terra-toggle-button": "^1.15.0",
+=======
+    "terra-responsive-element": "^1.13.0",
+    "terra-search-field": "^1.17.0",
+    "terra-signature": "^0.7.0",
+    "terra-slide-group": "^1.13.0",
+    "terra-slide-panel": "^1.13.0",
+    "terra-status": "^1.16.0",
+    "terra-table": "^1.17.0",
+    "terra-text": "^1.14.0",
+    "terra-theme-provider": "^1.8.0",
+    "terra-time-input": "^1.15.0",
+    "terra-toggle": "^1.13.0",
+    "terra-toggle-button": "^1.16.0",
+>>>>>>> master
     "xfc": "^1.0.0"
   },
   "peerDependencies": {
