@@ -78,6 +78,600 @@ storiesOf('Demographics Banner', module)
       preferredFirstName="John"
     />
   </Base>
+))
+.add('Populated 1', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="populated-demographics"
+      applicationContent={<span>St. Johns West Wing Room Cardiac Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gestationalAge="May 11, 1993"
+      postMenstrualAge="May 13, 1993"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Blank 2', () => (
+  <Base locale={locale}>
+    <DemographicsBanner id="blank-demographics-banner" />
+  </Base>
+))
+.add('Deceased 3', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="deceased-demographics"
+      applicationContent={<span className="risk-score">5%</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1992"
+      deceasedDate="March 12, 2017"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Gestational Age and Post Menstrual Age 4', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span className="risk-score">5%</span>}
+      age="65 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Female"
+      gestationalAge="April 5, 2016"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Jane Doe"
+      postMenstrualAge="April 7, 2016"
+      preferredFirstName="Jane"
+    />
+  </Base>
+))
+.add('Additional Details 5', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span>St. Johns Kansas City West Wing Room Cardiac Arrest Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Populated 6', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="populated-demographics"
+      applicationContent={<span>St. Johns West Wing Room Cardiac Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gestationalAge="May 11, 1993"
+      postMenstrualAge="May 13, 1993"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Blank 7', () => (
+  <Base locale={locale}>
+    <DemographicsBanner id="blank-demographics-banner" />
+  </Base>
+))
+.add('Deceased 8', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="deceased-demographics"
+      applicationContent={<span className="risk-score">5%</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1992"
+      deceasedDate="March 12, 2017"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Gestational Age and Post Menstrual Age 9', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span className="risk-score">5%</span>}
+      age="65 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Female"
+      gestationalAge="April 5, 2016"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Jane Doe"
+      postMenstrualAge="April 7, 2016"
+      preferredFirstName="Jane"
+    />
+  </Base>
+))
+.add('Additional Details 10', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span>St. Johns Kansas City West Wing Room Cardiac Arrest Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Populated 11', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="populated-demographics"
+      applicationContent={<span>St. Johns West Wing Room Cardiac Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gestationalAge="May 11, 1993"
+      postMenstrualAge="May 13, 1993"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Blank 12', () => (
+  <Base locale={locale}>
+    <DemographicsBanner id="blank-demographics-banner" />
+  </Base>
+))
+.add('Deceased 13', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="deceased-demographics"
+      applicationContent={<span className="risk-score">5%</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1992"
+      deceasedDate="March 12, 2017"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Gestational Age and Post Menstrual Age 14', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span className="risk-score">5%</span>}
+      age="65 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Female"
+      gestationalAge="April 5, 2016"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Jane Doe"
+      postMenstrualAge="April 7, 2016"
+      preferredFirstName="Jane"
+    />
+  </Base>
+))
+.add('Additional Details 15', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span>St. Johns Kansas City West Wing Room Cardiac Arrest Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Populated 16', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="populated-demographics"
+      applicationContent={<span>St. Johns West Wing Room Cardiac Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gestationalAge="May 11, 1993"
+      postMenstrualAge="May 13, 1993"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Blank 17', () => (
+  <Base locale={locale}>
+    <DemographicsBanner id="blank-demographics-banner" />
+  </Base>
+))
+.add('Deceased 18', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="deceased-demographics"
+      applicationContent={<span className="risk-score">5%</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1992"
+      deceasedDate="March 12, 2017"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Gestational Age and Post Menstrua 19l Age', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span className="risk-score">5%</span>}
+      age="65 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Female"
+      gestationalAge="April 5, 2016"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Jane Doe"
+      postMenstrualAge="April 7, 2016"
+      preferredFirstName="Jane"
+    />
+  </Base>
+))
+.add('Additional Det2ails', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span>St. Johns Kansas City West Wing Room Cardiac Arrest Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Popul2ated', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="populated-demographics"
+      applicationContent={<span>St. Johns West Wing Room Cardiac Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gestationalAge="May 11, 1993"
+      postMenstrualAge="May 13, 1993"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Bla1nk', () => (
+  <Base locale={locale}>
+    <DemographicsBanner id="blank-demographics-banner" />
+  </Base>
+))
+.add('Dece2ased', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="deceased-demographics"
+      applicationContent={<span className="risk-score">5%</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1992"
+      deceasedDate="March 12, 2017"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Gesta1tional Age and Post Menstrual Age', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span className="risk-score">5%</span>}
+      age="65 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Female"
+      gestationalAge="April 5, 2016"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Jane Doe"
+      postMenstrualAge="April 7, 2016"
+      preferredFirstName="Jane"
+    />
+  </Base>
+))
+.add('Additio2nal Details', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span>St. Johns Kansas City West Wing Room Cardiac Arrest Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Popula2ted', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="populated-demographics"
+      applicationContent={<span>St. Johns West Wing Room Cardiac Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gestationalAge="May 11, 1993"
+      postMenstrualAge="May 13, 1993"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Blan3k', () => (
+  <Base locale={locale}>
+    <DemographicsBanner id="blank-demographics-banner" />
+  </Base>
+))
+.add('Dec3eased', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="deceased-demographics"
+      applicationContent={<span className="risk-score">5%</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1992"
+      deceasedDate="March 12, 2017"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Gestat3ional Age and Post Menstrual Age', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span className="risk-score">5%</span>}
+      age="65 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Female"
+      gestationalAge="April 5, 2016"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Jane Doe"
+      postMenstrualAge="April 7, 2016"
+      preferredFirstName="Jane"
+    />
+  </Base>
+))
+.add('Additi4onal Details', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span>St. Johns Kansas City West Wing Room Cardiac Arrest Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Popul4ated', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="populated-demographics"
+      applicationContent={<span>St. Johns West Wing Room Cardiac Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gestationalAge="May 11, 1993"
+      postMenstrualAge="May 13, 1993"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Bla4nk', () => (
+  <Base locale={locale}>
+    <DemographicsBanner id="blank-demographics-banner" />
+  </Base>
+))
+.add('Decease4d', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="deceased-demographics"
+      applicationContent={<span className="risk-score">5%</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1992"
+      deceasedDate="March 12, 2017"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Ges5tational Age and Post Menstrual Age', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span className="risk-score">5%</span>}
+      age="65 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Female"
+      gestationalAge="April 5, 2016"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Jane Doe"
+      postMenstrualAge="April 7, 2016"
+      preferredFirstName="Jane"
+    />
+  </Base>
+))
+.add('Additio5nal Details', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span>St. Johns Kansas City West Wing Room Cardiac Arrest Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Popul6ated', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="populated-demographics"
+      applicationContent={<span>St. Johns West Wing Room Cardiac Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gestationalAge="May 11, 1993"
+      postMenstrualAge="May 13, 1993"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Bla6nk', () => (
+  <Base locale={locale}>
+    <DemographicsBanner id="blank-demographics-banner" />
+  </Base>
+))
+.add('Dec6eased', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="deceased-demographics"
+      applicationContent={<span className="risk-score">5%</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1992"
+      deceasedDate="March 12, 2017"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Gestat6ional Age and Post Menstrual Age', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span className="risk-score">5%</span>}
+      age="65 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Female"
+      gestationalAge="April 5, 2016"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Jane Doe"
+      postMenstrualAge="April 7, 2016"
+      preferredFirstName="Jane"
+    />
+  </Base>
+))
+.add('Additi6onal Details', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span>St. Johns Kansas City West Wing Room Cardiac Arrest Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Popu7lated', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="populated-demographics"
+      applicationContent={<span>St. Johns West Wing Room Cardiac Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gestationalAge="May 11, 1993"
+      postMenstrualAge="May 13, 1993"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Blan7k', () => (
+  <Base locale={locale}>
+    <DemographicsBanner id="blank-demographics-banner" />
+  </Base>
+))
+.add('Dece7ased', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      id="deceased-demographics"
+      applicationContent={<span className="risk-score">5%</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1992"
+      deceasedDate="March 12, 2017"
+      photo={<Image alt="Avatar" src={mockAvatarImg} height="35" />}
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
+))
+.add('Gest7ational Age and Post Menstrual Age', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span className="risk-score">5%</span>}
+      age="65 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Female"
+      gestationalAge="April 5, 2016"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Jane Doe"
+      postMenstrualAge="April 7, 2016"
+      preferredFirstName="Jane"
+    />
+  </Base>
+))
+.add('Additi7onal Details', () => (
+  <Base locale={locale}>
+    <DemographicsBanner
+      applicationContent={<span>St. Johns Kansas City West Wing Room Cardiac Arrest Unit 253</span>}
+      age="25 Years"
+      dateOfBirth="May 9, 1993"
+      gender="Male"
+      identifiers={{ MRN: 12343, REA: '3JSDA' }}
+      personName="Johnathon Doe"
+      preferredFirstName="John"
+    />
+  </Base>
 ));
 
 

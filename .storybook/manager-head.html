@@ -1,0 +1,40 @@
+<style>
+@media screen and (max-width: 1025px) {
+  .SplitPane.vertical  {
+    display: flex !important;
+    flex: 1 1 0% !important;
+    height: 100% !important;
+    bottom: 0px !important;
+    flex-direction: column !important;
+    min-height: 100% !important;
+    top: 0px !important;
+    width: 100% !important;
+  }
+
+  .SplitPane.vertical > .Pane1 {
+    order: 2 !important;
+    flex: 0 0 auto !important;
+    height: 250px !important;
+    display: flex !important;
+    width: 100% !important;
+    overflow-y: scroll !important;
+  }
+
+  .SplitPane.vertical > .Pane1 > div > div:last-child {
+    display: none !important;
+  }
+
+  .SplitPane.vertical > .Pane2 {
+    order: 1 !important;
+  }
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  var storybookTitle = document.querySelector('[href="https://github.com/storybooks/storybook"] > h3');
+  storybookTitle.innerText = 'Terra Core';
+
+  var storybookAnchor = document.querySelector('[href="https://github.com/storybooks/storybook"]');
+  storybookAnchor.setAttribute('href', 'https://github.com/cerner/terra-core');
+});
+</script>
