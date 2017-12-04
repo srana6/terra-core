@@ -5,11 +5,14 @@ import { setDefaults } from '@storybook/addon-info';
 // addon-info
 setDefaults({
   header: false,
-  inline: false,
+  inline: window.innerWidth > 1024,
 });
 
 const styles = {
-  padding: 20
+  paddingTop: 30,
+  paddingLeft: 20,
+  paddingRight: 20,
+  paddingBottom: 20,
 };
 
 const Padding = (storyFn) => (

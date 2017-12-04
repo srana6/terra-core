@@ -28,6 +28,10 @@ module.exports =  {
             { loader: 'sass-loader' },
           ],
         })),
+      },
+      {
+        test: /\.md$/,
+        use: "raw-loader"
       }
     ]
   },

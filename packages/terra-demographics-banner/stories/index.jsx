@@ -660,7 +660,7 @@ storiesOf('Demographics Banner', module)
     />
   </Base>
 ))
-.add('Additi7onal Details', () => (
+.add('Additi7onal Details Last Item', () => (
   <Base locale={locale}>
     <DemographicsBanner
       applicationContent={<span>St. Johns Kansas City West Wing Room Cardiac Arrest Unit 253</span>}
