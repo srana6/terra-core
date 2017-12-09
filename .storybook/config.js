@@ -65,9 +65,15 @@ const Padding = (storyFn) => (
 
 addDecorator(Padding);
 
-// Autoload stories via glob pattern
+// automatically import all files ending in *.stories.js
+const req = require.context('../packages/terra-site/stories', true, /.stories.jsx$/);
 function loadStories() {
-  require('glob-loader!./stories.pattern')
+  req.keys().forEach((filename) => req(filename));
 }
+
+// Autoload stories via glob pattern
+// function loadStories() {
+//   require('glob-loader!./stories.pattern')
+// }
 
 configure(loadStories, module);
