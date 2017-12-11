@@ -2,5 +2,4 @@
 node_modules
 target
 reports
-tests
 lerna.json
