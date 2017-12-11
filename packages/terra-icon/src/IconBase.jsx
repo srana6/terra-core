@@ -1,8 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-import 'terra-base/lib/baseStyles';
 
+/* eslint-disable global-require */
+if (process.env.TEST) {
+  require('terra-base/src/baseStyles');
+} else {
+  require('terra-base/lib/baseStyles');
+}
+
+/* eslint-disable import/first */
+/* Component styles need to come after base styles */
 // eslint-disable-next-line import/no-unresolved, import/no-webpack-loader-syntax
 import styles from './Icon.scss';
 
