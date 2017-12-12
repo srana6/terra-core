@@ -1,10 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
+import Base from 'terra-base/src/Base';
 import PropsTable from 'terra-props-table';
 import Markdown from 'terra-markdown';
 import ReadMe from 'terra-demographics-banner/docs/README.md';
 import { version } from 'terra-demographics-banner/package.json';
-import DemographicsBanner from 'terra-demographics-banner';
+import DemographicsBanner from 'terra-demographics-banner/src/DemographicsBanner';
 
 import DemographicsBannerAdditionalAges from './DemographicsBannerAdditionalAges';
 import DemographicsBannerAdditionalDetails from './DemographicsBannerAdditionalDetails';
@@ -15,8 +16,10 @@ import DemographicsBannerDeceased from './DemographicsBannerDeceased';
 // eslint-disable-next-line import/no-webpack-loader-syntax, import/first, import/no-unresolved, import/extensions
 import DemographicsBannerSrc from '!raw-loader!terra-demographics-banner/src/DemographicsBanner.jsx';
 
+const locale = document.getElementsByTagName('html')[0].getAttribute('lang');
+
 const DemographicsBannerExamples = () => (
-  <div>
+  <Base locale={locale}>
     <div id="version">Version: {version}</div>
     <Markdown id="readme" src={ReadMe} />
     <PropsTable id="props" src={DemographicsBannerSrc} />
@@ -34,7 +37,7 @@ const DemographicsBannerExamples = () => (
     <br />
     <h1>Demographics Banner with Additional Details</h1>
     <DemographicsBannerAdditionalDetails />
-  </div>
+  </Base>
 );
 
 export default DemographicsBannerExamples;
